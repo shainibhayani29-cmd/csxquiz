@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- START SCREEN -->
+  <div class="screen active" id="screen-start">
+    <div class="start-card">
+      <div class="logo">// CyberSec Challenge</div>
+      <h1 class="start-title">Test Your <span>Cyber</span> Knowledge</h1>
+      <p class="start-desc">Real questions on network security, cryptography, threats, and ethical hacking. 15 seconds per question.</p>
+      <div class="stats-row">
+        <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Questions</span></div>
+        <div class="stat"><span class="stat-num">10</span><span class="stat-label">Per Quiz</span></div>
+        <div class="stat"><span class="stat-num">15s</span><span class="stat-label">Timer</span></div>
+      </div>
+      <div style="margin-bottom:12px;font-size:13px;color:var(--muted);">Select Difficulty</div>
+      <div class="difficulty-row">
+        <button class="diff-btn selected" data-diff="all">All Levels</button>
+        <button class="diff-btn" data-diff="easy">Easy</button>
+        <button class="diff-btn" data-diff="medium">Medium</button>
+        <button class="diff-btn" data-diff="hard">Hard</button>
+      </div>
+      <button class="btn-start" id="btn-start">Start Quiz →</button>
+    </div>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div class="screen" id="screen-quiz">
+    <div class="quiz-header">
+      <div class="q-counter">Question <span id="q-num">1</span> of <span id="q-total">10</span></div>
+      <div class="timer" id="timer">15</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="quiz-card">
+      <div class="category-tag" id="q-category">Network Security</div>
+      <div class="question-text" id="q-text"></div>
+      <div class="options-list" id="options-list"></div>
+      <div class="feedback-box" id="feedback-box"></div>
+    </div>
+    <button class="btn-next" id="btn-next">Next Question →</button>
+  </div>
+
+  <!-- RESULTS SCREEN -->
+  <div class="screen" id="screen-result">
+    <div class="result-card">
+      <div class="result-icon" id="r-icon">🛡️</div>
+      <div class="result-grade" id="r-grade">8/10</div>
+      <div class="result-label">Your Score</div>
+      <div class="result-verdict" id="r-verdict"></div>
+      <div class="result-msg" id="r-msg"></div>
+      <div class="result-stats">
+        <div class="rs"><span class="rs-num green" id="r-correct">0</span><span class="rs-label">Correct</span></div>
+        <div class="rs"><span class="rs-num red" id="r-wrong">0</span><span class="rs-label">Wrong</span></div>
+        <div class="rs"><span class="rs-num blue" id="r-skipped">0</span><span class="rs-label">Skipped</span></div>
+      </div>
+      <button class="btn-retry" id="btn-retry">Play Again</button>
+      <button class="btn-home" id="btn-home">Home</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="questions.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
